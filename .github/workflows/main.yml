@@ -8,6 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: env
     steps:
       - uses: actions/checkout@v4
 
@@ -18,4 +19,4 @@ jobs:
           username: ${{ secrets.VM_USER }}
           key: ${{ secrets.DEPLOY_KEY }}
           script: |
-            bash /home/azureuser/deploy.sh
+            bash /home/azureuser/deploy.sh 
